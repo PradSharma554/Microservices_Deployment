@@ -1,0 +1,26 @@
+{
+  "name": "bookings-service",
+  "version": "1.0.0",
+  "description": "Bookings microservice for Event Booking platform",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "ioredis": "^5.4.0",
+    "mongoose": "^8.5.0",
+    "prom-client": "^15.1.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0"
+  }
+}
