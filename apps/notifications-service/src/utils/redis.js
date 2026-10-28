@@ -5,6 +5,7 @@ const logger = require('./logger');
 const subscriber = new Redis({
   host: config.redisHost,
   port: config.redisPort,
+  protocol: 2, // ioredis v6 defaults to RESP3; keep the v5 wire protocol
   retryStrategy(times) {
     const delay = Math.min(times * 50, 2000);
     return delay;

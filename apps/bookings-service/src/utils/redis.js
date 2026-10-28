@@ -6,6 +6,7 @@ const publisher = new Redis({
   host: config.redisHost,
   port: config.redisPort,
   lazyConnect: true,
+  protocol: 2, // ioredis v6 defaults to RESP3; keep the v5 wire protocol
 });
 
 publisher.on('error', (err) => {

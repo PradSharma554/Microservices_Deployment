@@ -52,7 +52,7 @@ async function createEvent(req, res) {
 async function updateEvent(req, res) {
   try {
     const event = await Event.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+      returnDocument: 'after',
       runValidators: true,
     });
     if (!event) return res.status(404).json({ error: 'Event not found' });
@@ -69,7 +69,7 @@ async function deleteEvent(req, res) {
     const event = await Event.findByIdAndUpdate(
       req.params.id,
       { status: 'cancelled' },
-      { new: true }
+      { returnDocument: 'after' }
     );
     if (!event) return res.status(404).json({ error: 'Event not found' });
     logger.info('Event cancelled', { eventId: event._id });
